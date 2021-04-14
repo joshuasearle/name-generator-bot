@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { token } = require('./token.json');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const NOUNS = ['a', 'e', 'i', 'o', 'u', 'y'];
 
@@ -98,4 +99,4 @@ const startsWith = (prefix, string) => {
   }, true);
 };
 
-client.login(token);
+client.login(process.env.token);
